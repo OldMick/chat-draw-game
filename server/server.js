@@ -51,7 +51,7 @@ const respond = (request, response) => {
         //writeHead(status code, {headers})
         response.writeHead(200, {'Content-Type': 'text/html'});
         //response.write sends the body of the response
-        response.write(`<!DOCTYPE html>
+        response.write(`
 <html>
 <head>
 <script src="./jquery.js" charset="utf-8"></script>
@@ -71,8 +71,7 @@ const respond = (request, response) => {
 <script src="./ui_dat.js" charset="utf-8"></script>
 <script src="./canvasAct.js" charset="utf-8"></script>
 <script src="./controlUImethod.js" charset="utf-8"></script>
-</html>`
-    }
+</html>`)}
 
 };
 
