@@ -54,35 +54,24 @@ const respond = (request, response) => {
         response.write(`<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Node</title>
+<script src="./jquery.js" charset="utf-8"></script>
+<script src="./client.js" charset="utf-8"></script>
+<script src="./socket.io.js" charset="utf-8"></script>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<title>你畫我猜</title>
+<link href="images/CSS.css" rel="stylesheet" type="text/css">
 </head>
-<body>`);
-        response.write('<p>Node is fun!</p>');
-//        console.log(car.make.toLowerCase());
-        const check = car => (query.make === undefined || query.make.toLowerCase() === car.make.toLowerCase()) &&
-                (query.model === undefined || query.model.toLowerCase() === car.model.toLowerCase()) &&
-                (query.year === undefined || query.year === car.year) &&
-                (query.transmission === undefined || query.transmission.toLowerCase() === car.transmission.toLowerCase()) &&
-                (query.minprice === undefined || parseInt(query.minprice) <= car.price) &&
-                (query.maxprice === undefined || parseInt(query.maxprice) >= car.price);
-        if(pathname === '/cars'){
-            cars.filter(check).forEach(car => {
-                response.write(`
-<hr>
-<img src = '${car.url}' height='200' alt='car'>
-<p>Make: ${car.make}</p>
-<p>Model: ${car.model}</p>
-<p>Year: ${car.year}</p>
-<p>Transmission: ${car.transmission}</p>
-<p>Price: $${car.price}</p>
-`);
-            });
-            //make, model, year, transmission, minprice, maxprice
-        }
-        response.end(`</body>
-</html>`);
+<body>
+<div id="EntryPoint">
+</div>
+<div id="main" class="main">
+</div>
+<div id="msg"></div>
+</body>
+<script src="./ui_dat.js" charset="utf-8"></script>
+<script src="./canvasAct.js" charset="utf-8"></script>
+<script src="./controlUImethod.js" charset="utf-8"></script>
+</html>`
     }
 
 };
